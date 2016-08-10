@@ -1,7 +1,7 @@
 package pattern.creational.singleton;
 
 public class AdaptiveSynchronizedVersion {
-    private static AdaptiveSynchronizedVersion singleInstance;
+    private volatile static AdaptiveSynchronizedVersion singleInstance;
 
     public static AdaptiveSynchronizedVersion getInstance() {
         if (singleInstance == null) {
