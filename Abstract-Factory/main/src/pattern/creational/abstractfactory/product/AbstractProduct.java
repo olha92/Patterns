@@ -1,4 +1,4 @@
-package pattern.creational.absrtractfactory.product;
+package pattern.creational.abstractfactory.product;
 
 public abstract class AbstractProduct {
     private String id;

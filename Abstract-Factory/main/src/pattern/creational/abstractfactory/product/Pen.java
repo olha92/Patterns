@@ -1,4 +1,4 @@
-package pattern.creational.absrtractfactory.product;
+package pattern.creational.abstractfactory.product;
 
 public class Pen extends AbstractProduct {
     private double depth;
