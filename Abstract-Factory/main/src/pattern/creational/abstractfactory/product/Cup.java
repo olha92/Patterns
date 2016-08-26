@@ -4,6 +4,7 @@ public class Cup extends AbstractProduct {
     private double volume;
     private String color;
     private double weight;
+    private String type;
 
     public double getVolume() {
         return volume;
@@ -29,9 +30,13 @@ public class Cup extends AbstractProduct {
         this.weight = weight;
     }
 
+    public String getType() { return type; }
+
+    public void setType(String type) { this.type = type; }
+
     @Override
     public String toString() {
-        return "Cup: " + super.toString() + ", "+ volume +
+        return "Cup " + type + ": " + super.toString() + ", " + volume +
                 "ml , " + color +
                 ", " + weight +
                 "g";

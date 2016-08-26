@@ -4,18 +4,17 @@ import pattern.creational.abstractfactory.product.AbstractProduct;
 import pattern.creational.abstractfactory.product.Cup;
 import pattern.creational.abstractfactory.product.Pen;
 
-public class ProductFactory implements ProductAbstractFactory{
+public class TeaProductFactory implements ProductAbstractFactory{
 
-    @Override
     public AbstractProduct createCup() {
         Cup cup = new Cup();
         cup.setColor("pink");
         cup.setVolume(600);
         cup.setWeight(100);
+        cup.setType("tea");
         return cup;
     }
 
-    @Override
     public AbstractProduct createPen() {
         Pen pen = new Pen();
         pen.setColor("blue");
