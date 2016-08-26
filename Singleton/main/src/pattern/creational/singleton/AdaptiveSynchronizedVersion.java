@@ -1,6 +1,9 @@
 package pattern.creational.singleton;
 
-public class AdaptiveSynchronizedVersion {
+/**
+ * Using late creating and volatile (since Java 1.5). The most adaptive variant.
+ */
+public class AdaptiveSynchronizedVersion extends Singleton{
     private volatile static AdaptiveSynchronizedVersion singleInstance;
 
     public static AdaptiveSynchronizedVersion getInstance() {
@@ -15,6 +18,6 @@ public class AdaptiveSynchronizedVersion {
     }
 
     private AdaptiveSynchronizedVersion() {
-
+        super("AdaptiveSynchronizedVersion", 1);
     }
 }

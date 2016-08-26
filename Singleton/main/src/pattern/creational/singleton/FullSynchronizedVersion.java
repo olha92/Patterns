@@ -1,6 +1,9 @@
 package pattern.creational.singleton;
 
-public class FullSynchronizedVersion {
+/**
+ * Synchronized method - not good because over after first executing
+ */
+public class FullSynchronizedVersion  extends Singleton{
     static private FullSynchronizedVersion singleInstance;
 
     public synchronized static FullSynchronizedVersion getInstance() {
@@ -11,6 +14,7 @@ public class FullSynchronizedVersion {
     }
 
     private FullSynchronizedVersion() {
+        super("FullSynchronizedVersion", 1);
     }
 
 }
