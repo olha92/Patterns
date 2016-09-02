@@ -7,18 +7,22 @@ import org.apache.log4j.Logger;
  */
 public class FullSynchronizedVersion  extends Singleton{
     private static final Logger log = Logger.getLogger(FullSynchronizedVersion.class);
-
     static private FullSynchronizedVersion singleInstance;
 
-    public synchronized static FullSynchronizedVersion getInstance() {
+    static {
+        log.info("Class loader");
+    }
+
+    public synchronized static FullSynchronizedVersion getInstance(final int threadNumber) {
         if (singleInstance == null) {
-            singleInstance = new FullSynchronizedVersion();
+            log.info("synch if, singleInstance = null, but singleInstance " + singleInstance);
+            singleInstance = new FullSynchronizedVersion(threadNumber);
         }
         return singleInstance;
     }
 
-    private FullSynchronizedVersion() {
-        super("FullSynchronizedVersion", 1);
+    private FullSynchronizedVersion(final int threadNumber) {
+        super("Full", threadNumber);
     }
 
 }
