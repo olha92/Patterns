@@ -3,6 +3,7 @@ package main;
 import org.apache.log4j.Logger;
 import pattern.creational.singleton.AdaptiveSynchronizedVersion;
 import pattern.creational.singleton.EarlyCreationVersion;
+import pattern.creational.singleton.FullSynchronizedVersion;
 
 /**
  * Main for example
@@ -15,9 +16,43 @@ public class Main {
         log.info("[Singleton] main starts");
         adaptiveSynchronizedVersionTest();
         earlyCreationVersionTest();
+        fullSynchronizedVersionTest();
         log.info("[Singleton] main finishes");
-//            EarlyCreationVersion earlyCreation = EarlyCreationVersion.getInstance();
-//            FullSynchronizedVersion fullSynchronized = FullSynchronizedVersion.getInstance();
+//      FullSynchronizedVersion fullSynchronized = FullSynchronizedVersion.getInstance();
+    }
+
+    private static void fullSynchronizedVersionTest() {
+        log.info("[FullSynchronizedVersion] fullSynchronizedVersionTest starts");
+        Thread[] fullSynches = new Thread[SIZE];
+        for (int i = 0; i < SIZE; i++) {
+            final int n = i;
+            fullSynches[i] = new Thread(new Runnable() {
+                private final Logger log = Logger.getLogger(Runnable.class);
+
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log.error(e);
+                    }
+                    FullSynchronizedVersion.getInstance(n);
+                }
+            });
+        }
+        for (int i = 0; i < SIZE; i++) {
+            fullSynches[i].start();
+        }
+        for (int i = 0; i < SIZE; i++) {
+            try {
+                fullSynches[i].join();
+            } catch (InterruptedException e) {
+                log.error(e);
+            }
+        }
+        log.info("[FullSynchronizedVersion] getAllWent = " + FullSynchronizedVersion.getAllWent());
+        log.info("[FullSynchronizedVersion] getNullWent = " + FullSynchronizedVersion.getNullWent());
+        log.info("[FullSynchronizedVersion] getSynchMethodWent = " + FullSynchronizedVersion.getSynchMethodWent());
+        log.info("[FullSynchronizedVersion] fullSynchronizedVersionTest finishes");
     }
 
     private static void adaptiveSynchronizedVersionTest() {
