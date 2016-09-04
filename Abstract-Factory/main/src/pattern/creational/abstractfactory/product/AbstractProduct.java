@@ -4,6 +4,11 @@ public abstract class AbstractProduct {
     private String id;
     private String name;
 
+    public AbstractProduct(){
+        this.id = "id";
+        this.name = "product";
+    }
+
     public String getId() {
         return id;
     }
