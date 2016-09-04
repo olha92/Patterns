@@ -6,10 +6,10 @@ import pattern.creational.singleton.EarlyCreationVersion;
 import pattern.creational.singleton.FullSynchronizedVersion;
 
 /**
- * Main for example
+ * SingletonMain for example
  */
-public class Main {
-    private static final Logger log = Logger.getLogger(Main.class);
+public class SingletonMain {
+    private static final Logger log = Logger.getLogger(SingletonMain.class);
     private static final int SIZE = 105;
 
     public static void main(String[] args) {
@@ -18,7 +18,6 @@ public class Main {
         earlyCreationVersionTest();
         fullSynchronizedVersionTest();
         log.info("[Singleton] main finishes");
-//      FullSynchronizedVersion fullSynchronized = FullSynchronizedVersion.getInstance();
     }
 
     private static void fullSynchronizedVersionTest() {
