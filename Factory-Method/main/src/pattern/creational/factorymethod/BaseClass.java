@@ -7,15 +7,15 @@ public abstract class BaseClass {
     private String name;
 
     public <T> Object someMethod(T arg) {
-        log.info("Method someMethod starts with arg " + arg);
+        log.info(String.format("Method someMethod starts with arg='%s'", arg));
         Object result = null;
         Class info = factoryMethod(arg);
-        if (info == null) {
+        if (info.getMethods().length%2 == 0) {
             result = "one";
         } else {
             result = "two";
         }
-        log.info("Method someMethod finishes with result " + result);
+        log.info(String.format("Method someMethod finishes with result='%s'", result));
         return result;
     }
 

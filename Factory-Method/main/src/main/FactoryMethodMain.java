@@ -21,6 +21,8 @@ public class FactoryMethodMain {
         two.someMethod("");
         one.someMethod(5);
         two.someMethod(5);
+        one.someMethod(10);
+        two.someMethod(10);
         log.info("[Factory Method] main finishes");
     }
 }

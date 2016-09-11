@@ -7,7 +7,7 @@ public class ConcreteRealization extends BaseClass {
 
     @Override
     protected <T> Class factoryMethod(T arg) {
-        log.info("Method factoryMethod starts with arg " + arg);
+        log.info(String.format("Method factoryMethod starts with arg='%s'", arg));
         Class result;
         if(arg == null){
             result = Object.class;
@@ -16,7 +16,7 @@ public class ConcreteRealization extends BaseClass {
         }else{
             result = arg.getClass();
         }
-        log.info("Method factoryMethod finishes with result " + result);
+        log.info(String.format("Method factoryMethod finishes with result='%s'", result.getName()));
         return result;
     }
 }

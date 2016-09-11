@@ -7,17 +7,17 @@ public class OtherRealization extends BaseClass {
 
     @Override
     protected <T> Class factoryMethod(T arg) {
-        log.info("Method factoryMethod starts with arg " + arg);
+        log.info(String.format("Method factoryMethod starts with arg='%s'", arg));
         Class result = null;
         if (arg == null) {
-            log.error("Illegal argument: arg =  " + result);
+            log.error(String.format("Illegal argument: arg = '%s'", result));
             throw new IllegalArgumentException();
         } else if (arg instanceof String) {
             result = Exception.class;
         } else {
             result = arg.getClass();
         }
-        log.info("Method factoryMethod finishes with result " + result);
+        log.info(String.format("Method factoryMethod finishes with result='%s'", result.getName()));
         return result;
     }
 }
