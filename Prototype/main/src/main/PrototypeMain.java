@@ -11,22 +11,22 @@ public class PrototypeMain {
         log.info("[Prototype] main starts");
         ShapeCache.loadCache();
 
-        Shape clonedShape = (Shape) ShapeCache.getShape("Circle");
+        Shape clonedShape = ShapeCache.getShape("Circle");
         log.info("Shape : " + clonedShape.getType());
 
-        clonedShape = (Shape) ShapeCache.getShape("Circle");
+        clonedShape = ShapeCache.getShape("Circle");
         log.info("Shape : " + clonedShape.getType());
 
-        clonedShape = (Shape) ShapeCache.getShape("Square");
+        clonedShape = ShapeCache.getShape("Square");
         log.info("Shape : " + clonedShape.getType());
 
-        clonedShape = (Shape) ShapeCache.getShape("Square");
+        clonedShape = ShapeCache.getShape("Square");
         log.info("Shape : " + clonedShape.getType());
 
-        clonedShape = (Shape) ShapeCache.getShape("Rectangle");
+        clonedShape = ShapeCache.getShape("Rectangle");
         log.info("Shape : " + clonedShape.getType());
 
-        clonedShape = (Shape) ShapeCache.getShape("Rectangle");
+        clonedShape = ShapeCache.getShape("Rectangle");
         log.info("Shape : " + clonedShape.getType());
         log.info("[Prototype] main finishes");
     }
