@@ -7,11 +7,16 @@
     <packaging>pom</packaging>
 
     <modules>
+        <!-- creational-->
         <module>Singleton</module>
         <module>Factory-Method</module>
         <module>Abstract-Factory</module>
         <module>Prototype</module>
         <module>Builder</module>
+        <!-- behavioral -->
+        <module>Chain-of-Responsibility</module>
+        <!-- structural -->
+
     </modules>
 
     <dependencyManagement>
