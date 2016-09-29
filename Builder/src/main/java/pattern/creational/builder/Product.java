@@ -35,4 +35,9 @@ public class Product {
     public void setCoefficient(double coefficient) {
         this.coefficient = coefficient;
     }
+
+    @Override
+    public String toString(){
+        return String.format("name '%s', count %s, coefficient %s, values %s", name, count, coefficient, values);
+    }
 }
