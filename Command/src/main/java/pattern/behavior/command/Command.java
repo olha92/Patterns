@@ -1,4 +1,5 @@
 package pattern.behavior.command;
 
-public abstract class Command {
+public interface Command {
+    void execute();
 }

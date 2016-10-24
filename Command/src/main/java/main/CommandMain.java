@@ -10,5 +10,7 @@ public class CommandMain {
 
     public static void main(String[] args) {
         log.info("Start method main");
+
+        log.info("Finish method main");
     }
 }
