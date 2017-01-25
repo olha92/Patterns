@@ -1,12 +1,13 @@
 package pattern.behavior.interpreter;
 
 import org.apache.log4j.Logger;
+import pattern.behavior.InterpreterContext;
 
-public class NonterminalExpression extends AbstractExpression {
-    private static final Logger log = Logger.getLogger(NonterminalExpression.class);
-    @Override
-    public Object interpret() {
-        log.info("Start method interpret");
+public class NonTerminalExpression implements Expression {
+    private static final Logger log = Logger.getLogger(NonTerminalExpression.class);
+
+    public String interpret(InterpreterContext interpreterContext) {
+        log.info("Start method interpret with interpreterContext" + interpreterContext);
         return null;
     }
 }
