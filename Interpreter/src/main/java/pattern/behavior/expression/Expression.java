@@ -1,4 +1,4 @@
-package pattern.behavior.interpreter;
+package pattern.behavior.expression;
 
 import pattern.behavior.InterpreterContext;
 
